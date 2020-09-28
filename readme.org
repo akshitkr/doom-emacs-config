@@ -1,0 +1,26 @@
+#+TITLE:   My doom setup
+#+DATE:    September 28, 2020
+#+SINCE:   <replace with next tagged release version>
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+- [[#description][Description]]
+  - [[#maintainers][Maintainers]]
+- [[#prerequisites][Prerequisites]]
+- [[#features][Features]]
+
+* Description
+# A summary of what this module does.
+
++ If possible, include a brief list of feature highlights here
++ Like code completion, syntax checking or available snippets
++ Include links to packages & external things where possible
+
+** Maintainers
++ @hlissner (Author)
+
+* Prerequisites
+doom-emacs
+* Features
+# An in-depth list of features, how to use them, and their dependencies.
+Javascript, Python, Rust and C with autocompletion and language server support.
