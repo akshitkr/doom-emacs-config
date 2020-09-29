@@ -48,3 +48,10 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! nyan-mode)
+(nyan-mode t)
+(setq nyan-animate-nyancat t)
+(setq nyan-animation-nyancat t)
+(setq nyan-animation-frame-interval 0.01)
+(setq nyan-wavy-trail t)
