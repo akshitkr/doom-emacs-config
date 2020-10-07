@@ -63,5 +63,6 @@
 (setq company-dabbrev-downcase 0)
 (setq company-idle-delay 0.3)
 
+(load-file "./env.el") ;;shhhhh
 (setq counsel-spotify-client-id "6d1b54344e304c99bcdef61070f0ce26")
-(setq counsel-spotify-client-secret "974b03419fde42d98cf6eb904691e2ed")
+(setq counsel-spotify-client-secret SPOTIFY)
