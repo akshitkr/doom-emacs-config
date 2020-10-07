@@ -47,11 +47,17 @@
 ;; ...or multiple packages
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
-;(unpin! t)
 
+                                        ;(unpin! t)
+; nyan mode
 (package! nyan-mode)
-(nyan-mode t)
-(setq nyan-animate-nyancat t)
-(setq nyan-animation-nyancat t)
-(setq nyan-animation-frame-interval 0.01)
-(setq nyan-wavy-trail t)
+
+; counsel-spotify
+(package! counsel-spotify)
+
+(setq flutter-sdk-path "~/Documents/code/flutter")
+
+(add-to-list 'exec-path "~/Documents/code/flutter")
+
+(after! lsp-dart
+  (setq lsp-dart-sdk-dir "~/Documents/code/flutter/bin/cache/dart-sdk/bin"))
