@@ -61,3 +61,5 @@
 
 (after! lsp-dart
   (setq lsp-dart-sdk-dir "~/Documents/code/flutter/bin/cache/dart-sdk/bin"))
+
+(package! request)

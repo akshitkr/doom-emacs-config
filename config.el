@@ -33,7 +33,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type nil)
+(setq display-line-numbers-type "relative")
 (setq doom-font (font-spec :family "Roboto Mono" :size 14))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -53,6 +53,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;;nyan uwu
 (nyan-mode t)
 (nyan-start-animation)
 (setq nyan-animate-nyancat t)
@@ -60,9 +61,14 @@
 (setq nyan-animation-frame-interval 0.3)
 (setq nyan-wavy-trail t)
 
+;;company defaults
 (setq company-dabbrev-downcase 0)
-(setq company-idle-delay 0.3)
+(setq company-idle-delay 0.2)
 
-(load-file "./env.el") ;;shhhhh
+;;spotify
+(load-file "~/.doom.d/env.el") ;;shhhhh
 (setq counsel-spotify-client-id "6d1b54344e304c99bcdef61070f0ce26")
 (setq counsel-spotify-client-secret SPOTIFY)
+
+;;shift+arrow key buffer change
+(windmove-default-keybindings)
