@@ -55,11 +55,6 @@
 ; counsel-spotify
 (package! counsel-spotify)
 
-(setq flutter-sdk-path "~/Documents/code/flutter")
-
-(add-to-list 'exec-path "~/Documents/code/flutter")
-
-(after! lsp-dart
-  (setq lsp-dart-sdk-dir "~/Documents/code/flutter/bin/cache/dart-sdk/bin"))
-
 (package! request)
+
+(package! elcord)

@@ -34,7 +34,7 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type "relative")
-(setq doom-font (font-spec :family "Roboto Mono" :size 14))
+(setq doom-font (font-spec :family "Jetbrains Mono Light" :size 13 :line-width 1.2))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -72,3 +72,19 @@
 
 ;;shift+arrow key buffer change
 (windmove-default-keybindings)
+
+
+(setq default-directory "~/Documents/code/")
+
+
+(setq flutter-sdk-path "~/Documents/code/flutter")
+
+(add-to-list 'exec-path "~/Documents/code/flutter")
+
+
+(setq lsp-dart-flutter-sdk-dir "~/Documents/code/flutter")
+
+
+(global-set-key (kbd "C-x t j") 'tide-jump-to-definition)
+(global-set-key (kbd "C-x t b") 'tide-jump-back)
+(global-set-key (kbd "C-x t r") 'tide-references)
