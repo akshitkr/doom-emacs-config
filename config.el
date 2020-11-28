@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dark+)
+(setq doom-theme 'doom-henna)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -34,7 +34,7 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type "relative")
-(setq doom-font (font-spec :family "Jetbrains Mono Light" :size 13 :line-width 1.2))
+(setq doom-font (font-spec :family "Jetbrains Mono Light" :size 13 :line-width 1 :spacing 1))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -88,3 +88,41 @@
 (global-set-key (kbd "C-x t j") 'tide-jump-to-definition)
 (global-set-key (kbd "C-x t b") 'tide-jump-back)
 (global-set-key (kbd "C-x t r") 'tide-references)
+
+(setq live-py-version "python3")
+(setq python-shell-interpreter "python3")
+
+(after! flycheck
+  (add-to-list 'flycheck-check-syntax-automatically 'idle-change))
+
+;; org stuff
+
+(add-hook! 'org-agenda-mode-hook (lambda () (org-gcal-sync)))
+(add-hook! 'org-capture-after-finalize-hook (lambda () (org-gcal-sync)))
+
+(global-set-key (kbd "C-c c") 'org-capture)
+
+(setq org-capture-templates
+'(("a" "Appointment" entry (file  "~/Documents/orgfiles/gcal.org" "Appointments")
+"* TODO %?\n:PROPERTIES:\n\n:END:\nDEADLINE: %^T \n %i\n")
+("n" "Note" entry (file+headline "~/Documents/orgfiles/notes.org" "Notes")
+"* Note %?\n%T")
+("l" "Link" entry (file+headline "~/Documents/orgfiles/links.org" "Links")
+"* %? %^L %^g \n%T" :prepend t)
+("b" "Blog idea" entry (file+headline "~/Documents/orgfiles/i.org" "Blog Topics:")
+"* %?\n%T" :prepend t)
+("t" "To Do Item" entry (file+headline "~/Documents/orgfiles/i.org" "To Do Items")
+"* %?\n%T" :prepend t)
+("j" "Journal" entry (file+datetree "~/Documents/orgfiles/journal.org")
+"* %?\nEntered on %U\n  %i\n  %a")
+))
+(use-package! org-gcal
+  :ensure t
+  :config
+  (setq org-gcal-client-id "998776820157-qaod7i0r4r5hg17rj0ch3omj5lh8s6sk.apps.googleusercontent.com"
+        org-gcal-client-secret "t2RlVxXNOl1XQQ6E5ufDZIR1"
+        org-gcal-file-alist '(("akshitkumar31102003@gmail.com" . "~/Documents/orgfiles/schedule.org")))
+  )
+
+(custom-set-variables
+ '(org-directory "~/Documents/orgfiles"))

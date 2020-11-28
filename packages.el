@@ -51,10 +51,13 @@
                                         ;(unpin! t)
 ; nyan mode
 (package! nyan-mode)
-
 ; counsel-spotify
 (package! counsel-spotify)
-
+;; request
 (package! request)
-
+;; discord status cuz why not
 (package! elcord)
+;; doesnt work :/
+(package! live-py-mode)
+;; org google calendar :}
+(package! org-gcal)
