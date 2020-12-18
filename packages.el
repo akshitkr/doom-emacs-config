@@ -49,15 +49,11 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 
                                         ;(unpin! t)
-; nyan mode
 (package! nyan-mode)
-; counsel-spotify
 (package! counsel-spotify)
-;; request
 (package! request)
-;; discord status cuz why not
 (package! elcord)
-;; doesnt work :/
 (package! live-py-mode)
-;; org google calendar :}
 (package! org-gcal)
+(package! lorem-ipsum)
+(package! impatient-mode)
