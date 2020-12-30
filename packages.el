@@ -57,3 +57,4 @@
 (package! org-gcal)
 (package! lorem-ipsum)
 (package! impatient-mode)
+(package! company-quickhelp)

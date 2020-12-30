@@ -27,6 +27,7 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one-light)
 
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
@@ -34,7 +35,7 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'nil)
-(setq doom-font (font-spec :family "Inconsolata" :width 'condensed :size 16 :weight 'semi-light)
+(setq doom-font (font-spec :family "SF Mono" :size 15 :weight 'semi-light)
       doom-big-font (font-spec :family "Overpass" :size 15)
       )
 
@@ -147,4 +148,21 @@
   :config
   (lsp-ui-doc-enable t))
 
- (set-frame-parameter (selected-frame) 'alpha '(95 50))
+(set-frame-parameter (selected-frame) 'alpha '(95 50))
+
+
+(projectile-register-project-type 'elm '("elm.json")
+                                  :project-file "elm.json"
+                                  :compile "elm reactor"
+                                  :test "elm test"
+                                  :run "elm start"
+                                  )
+
+(projectile-register-project-type 'npm '("package.json")
+                                  :project-file "package.json"
+                                  :compile "npm install"
+                                  :test "npm test"
+                                  :run "npm start"
+                                  )
+
+(company-quickhelp-mode)
